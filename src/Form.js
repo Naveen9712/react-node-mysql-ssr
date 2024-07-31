@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './Form.css'; // Import the CSS file
 
 const Form = () => {
   const [name, setName] = useState('');
@@ -40,7 +41,7 @@ const Form = () => {
           <label htmlFor="email">Email:</label>
           <input type="email" id="email" value={email} onChange={(e) => setEmail(e.target.value)} />
         </div>
-        <button type="submit">Submited</button>
+        <button type="submit">Submit</button>
       </form>
       {message && <p>{message}</p>}
     </div>

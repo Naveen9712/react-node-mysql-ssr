@@ -16,11 +16,15 @@ module.exports = [
           exclude: /node_modules/,
           use: 'babel-loader',
         },
+        {
+          test: /\.css$/, // Add this rule
+          use: ['style-loader', 'css-loader'], // Loaders for CSS
+        },
       ],
     },
   },
   {
-    entry: './src/App.js', // Server-side entry point
+    entry: './src/App.js', // Server-side entry point (or an SSR entry point)
     target: 'node',
     externals: [nodeExternals()],
     output: {
@@ -35,6 +39,10 @@ module.exports = [
           test: /\.js$/,
           exclude: /node_modules/,
           use: 'babel-loader',
+        },
+        {
+          test: /\.css$/, // Add this rule
+          use: ['style-loader', 'css-loader'], // Loaders for CSS
         },
       ],
     },
